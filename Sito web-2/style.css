@@ -1,0 +1,688 @@
+/* Stile generale */
+body {
+    font-family: 'Avenir', Calibri, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff; /* Rettangolo bianco */
+    color: #333; /* Testo nero */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 1.2rem; /* Testo leggermente più grande */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Aumenta la dimensione del testo */
+    font-weight: bold; /* Rende il testo più marcato */
+    text-transform: capitalize; /* Assicura che solo la prima lettera sia maiuscola */
+    margin: 0;
+    flex: 1;
+    text-align: left; /* Allinea il titolo a sinistra */
+}
+
+header h1 a {
+    color: #333; /* Colore del testo */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold;
+}
+
+header nav {
+    flex: 2;
+    text-align: right; /* Allinea il menu a destra */
+}
+
+header .menu-destra {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+header .menu-destra li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header .menu-destra li a:hover {
+    color: #555; /* Colore più scuro al passaggio del mouse */
+}
+
+header .btn-accedi {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header .btn-accedi:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Slider */
+#slider {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Aumenta l'altezza dello slider per riempire lo spazio */
+    overflow: hidden;
+    margin: 0; /* Rimuove eventuali margini */
+    padding: 0; /* Rimuove eventuali padding */
+}
+
+.slider-container {
+    display: flex;
+    position: relative;
+    height: 100%;
+    margin: 0; /* Rimuove eventuali margini */
+    padding: 0; /* Rimuove eventuali padding */
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    margin: 0; /* Rimuove eventuali margini */
+    padding: 0; /* Rimuove eventuali padding */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra l'intero contenitore */
+    display: block; /* Rimuove eventuali spazi sotto l'immagine */
+    margin: 0; /* Rimuove eventuali margini */
+    padding: 0; /* Rimuove eventuali padding */
+}
+
+.slide-info {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    color: #fff; /* Testo bianco */
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Rimuove lo sfondo nero */
+    color: #333; /* Cambia colore delle frecce in nero */
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+.left-arrow {
+    left: 1rem;
+}
+
+.right-arrow {
+    right: 1rem;
+}
+
+/* Categorie */
+#categorie {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #fff;
+    margin-top: 0; /* Rimuove il margine superiore */
+    position: relative; /* Mantiene il layout */
+    top: -5rem; /* Sposta le categorie sopra lo slider */
+}
+
+.categoria {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 1rem;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+.categoria:hover {
+    transform: scale(1.05);
+}
+
+/* Contatti */
+#contatti {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+#login {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#login h2 {
+    margin-bottom: 1rem;
+}
+
+#login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#login input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#login button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #444; /* Grigio scuro */
+    color: #fff; /* Testo bianco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#login button:hover {
+    background-color: #666; /* Grigio più chiaro al passaggio del mouse */
+    color: #fff; /* Mantieni il testo bianco */
+}
+
+#login p a {
+    color: #444; /* Grigio scuro */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#login p a:hover {
+    text-decoration: underline;
+    color: #666; /* Grigio più chiaro */
+}
+
+#register {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#register h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#register form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#register input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#register button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#register button:hover {
+    background-color: #666;
+}
+
+#register p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+#register p a {
+    color: #444;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#register p a:hover {
+    text-decoration: underline;
+    color: #666;
+}
+
+/* Sezione Vestiti Uomo */
+#vestiti-uomo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+
+.vestiti {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 colonne di larghezza uguale */
+    gap: 2rem; /* Spazio tra gli elementi */
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.vestito {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%; /* Adatta la larghezza all'interno della griglia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0.5rem; /* Aggiunge spazio tra gli elementi */
+}
+
+.vestito:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.vestito img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.vestito h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.vestito p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Stile generale */
+body {
+    font-family: 'Avenir', Calibri, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem; /* Aumenta la dimensione del testo */
+    font-weight: bold; /* Rende il testo più marcato */
+    text-transform: capitalize; /* Assicura che solo la prima lettera sia maiuscola */
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+header h1 a {
+    color: #333; /* Colore del testo */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold;
+}
+
+header nav {
+    flex: 2;
+    text-align: right;
+}
+
+header .menu-destra {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+header .menu-destra li a {
+    color: #333;
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header .menu-destra li a:hover {
+    color: #555; /* Colore più scuro al passaggio del mouse */
+}
+
+header .btn-accedi {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header .btn-accedi:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Stile generale per i link */
+a {
+    color: #333; /* Nero */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold;
+}
+
+a:hover {
+    color: #555; /* Colore leggermente più scuro al passaggio del mouse */
+}
+
+a:visited {
+    color: #333; /* Mantiene il colore nero anche se il link è stato visitato */
+}
+
+/* Stile per le categorie */
+#categorie {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #fff;
+    margin-top: 0; /* Rimuove il margine superiore */
+    position: relative; /* Mantiene il layout */
+    top: -5rem; /* Sposta le categorie sopra lo slider */
+}
+
+.categoria {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 1rem;
+    background-color: #f9f9f9;
+    position: relative; /* Necessario per il menu dropdown */
+    transition: transform 0.3s ease;
+}
+
+.categoria:hover {
+    transform: scale(1.05);
+}
+
+.categoria a {
+    color: #333; /* Nero */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.categoria a:hover {
+    color: #555; /* Colore leggermente più scuro al passaggio del mouse */
+}
+
+/* Stile per le sezioni di abbigliamento */
+section {
+    
+    
+    padding: 2rem;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per gli h2 delle immagini in primo piano nella pagina iniziale */
+#slider .slide-info h2 {
+    color: #fff; /* Testo bianco */
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Stile per gli h2 delle sezioni nella pagina Uomo */
+body:not(#slider) #pagina-uomo section h2 {
+    color: #333; /* Testo nero */
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.vestiti {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonne flessibili */
+    gap: 5rem; /* Spazio di 20 centimetri tra gli elementi */
+    justify-content: center; /* Centra gli elementi */
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.vestito {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%; /* Adatta la larghezza all'interno della griglia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vestito:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.vestito img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.vestito h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.vestito b {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.vestito p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#tshirt .vestito:nth-child(1) {
+    margin-left: -1rem; /* La prima T-shirt non ha margine a sinistra */
+}
+
+#tshirt .vestito:nth-child(2) {
+    margin-left: -1.5rem; /* La seconda T-shirt dista 5rem dalla prima */
+}
+
+#tshirt .vestito:nth-child(3) {
+    margin-left: -2rem; /* La terza T-shirt dista 5rem dalla seconda */
+}
+
+#tshirt .vestito:nth-child(4) {
+    margin-left: -2rem; /* La quarta T-shirt dista 5rem dalla terza */
+}
+
+#tshirt .vestito:nth-child(5) {
+    margin-left: -2rem; /* La quinta T-shirt dista 5rem dalla quarta */
+}
+
+/* Pantaloni */
+#pantaloni .vestito:nth-child(1) {
+    margin-left: -1rem; /* Il primo pantalone non ha margine a sinistra */
+}
+
+#pantaloni .vestito:nth-child(2) {
+    margin-left: -1.5rem; /* Il secondo pantalone dista 5rem dal primo */
+}
+
+#pantaloni .vestito:nth-child(3) {
+    margin-left: -2rem; /* Il terzo pantalone dista 5rem dal secondo */
+}
+
+#pantaloni .vestito:nth-child(4) {
+    margin-left: -2rem; /* Il quarto pantalone dista 5rem dal terzo */
+}
+
+#pantaloni .vestito:nth-child(5) {
+    margin-left: -2rem; /* Il quinto pantalone dista 5rem dal quarto */
+}
+
+/* Felpe */
+#felpe .vestito:nth-child(1) {
+    margin-left: -1rem; /* La prima felpa non ha margine a sinistra */
+}
+
+#felpe .vestito:nth-child(2) {
+    margin-left: -1.5rem; /* La seconda felpa dista 5rem dalla prima */
+}
+
+#felpe .vestito:nth-child(3) {
+    margin-left: -2rem; /* La terza felpa dista 5rem dalla seconda */
+}
+
+#felpe .vestito:nth-child(4) {
+    margin-left: -2rem; /* La quarta felpa dista 5rem dalla terza */
+}
+
+#felpe .vestito:nth-child(5) {
+    margin-left: -2rem; /* La quinta felpa dista 5rem dalla quarta */
+}
+
+/* Camicie */
+#camicie .vestito:nth-child(1) {
+    margin-left: -1rem; /* La prima camicia non ha margine a sinistra */
+}
+
+#camicie .vestito:nth-child(2) {
+    margin-left: -1.5rem; /* La seconda camicia dista 5rem dalla prima */
+}
+
+#camicie .vestito:nth-child(3) {
+    margin-left: -2rem; /* La terza camicia dista 5rem dalla seconda */
+}
+
+#camicie .vestito:nth-child(4) {
+    margin-left: -2rem; /* La quarta camicia dista 5rem dalla terza */
+}
+
+#camicie .vestito:nth-child(5) {
+    margin-left: -2rem; /* La quinta camicia dista 5rem dalla quarta */
+}
+
+/* Giacche */
+#giacche .vestito:nth-child(1) {
+    margin-left: -1rem; /* La prima giacca non ha margine a sinistra */
+}
+
+#giacche .vestito:nth-child(2) {
+    margin-left: -1.5rem; /* La seconda giacca dista 5rem dalla prima */
+}
+
+#giacche .vestito:nth-child(3) {
+    margin-left: -2rem; /* La terza giacca dista 5rem dalla seconda */
+}
+
+#giacche .vestito:nth-child(4) {
+    margin-left: -2rem; /* La quarta giacca dista 5rem dalla terza */
+}
+
+#giacche .vestito:nth-child(5) {
+    margin-left: -2rem; /* La quinta giacca dista 5rem dalla quarta */
+}
+
+/* Costumi */
+#costumi .vestito:nth-child(1) {
+    margin-left: -1rem; /* Il primo costume non ha margine a sinistra */
+}
+
+#costumi .vestito:nth-child(2) {
+    margin-left: -1.5rem; /* Il secondo costume dista 5rem dal primo */
+}
+
+#costumi .vestito:nth-child(3) {
+    margin-left: -2rem; /* Il terzo costume dista 5rem dal secondo */
+}
+
+#costumi .vestito:nth-child(4) {
+    margin-left: -2rem; /* Il quarto costume dista 5rem dal terzo */
+}
+
+#costumi .vestito:nth-child(5) {
+    margin-left: -2rem; /* Il quinto costume dista 5rem dal quarto */
+}

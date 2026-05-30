@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzzanca STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Buzzanca Store</h1>
+        <nav>
+            <ul class="menu-destra">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#prodotti">Prodotti</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="login.html" class="btn-accedi">Accedi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sezione immagine principale con slider -->
+    <section id="slider">
+        <div class="slider-container">
+            <button class="arrow left-arrow" onclick="prevSlide()">&#10094;</button>
+            <div class="slide">
+                <img src="imgs/vestito1.jpg" alt="Mini Ninnolo">
+                <div class="slide-info">
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/vestito2.jpg" alt="Pacchetto Ninnolo+Opossum">
+                <div class="slide-info">
+    
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/vestito3.jpg" alt="Pisella">
+                <div class="slide-info">
+                </div>
+            </div>
+            <button class="arrow right-arrow" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Categorie -->
+    <section id="categorie">
+        <div class="categoria">
+            <a href="uomo.html">
+                <h3>Uomo</h3>
+            </a>
+        </div>
+        <div class="categoria">
+            <a href="donna.html">
+                <h3>Donna</h3>
+            </a>
+        </div>
+        <div class="categoria">
+            <a href="accessori.html">
+                <h3>Accessori</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti">
+        <h2>Contattaci</h2>
+        <p>Email: info@buzzanca.eu</p>
+        <p>Telefono: +39 059 689513</p>
+        <p>Indirizzo: Piazza Martiri, 19/20, Carpi (MO)</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Buzzanca STORE. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
